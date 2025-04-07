@@ -11,6 +11,7 @@ Feature: Menu Functionality
     When I click on "Open Menu" button
     And I click on "Close Menu" button
     And I click on "Open Menu" button
+    And I wait for 1 second
     Then I should see "All Items" nav menu text
     And I should see "About" nav menu text
     And I should see "Logout" nav menu text
