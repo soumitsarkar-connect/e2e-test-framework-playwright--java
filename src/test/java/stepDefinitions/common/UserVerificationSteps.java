@@ -2,6 +2,7 @@ package stepDefinitions.common;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import components.Link;
 import components.NavMenu;
 import components.Text;
 import components.Button;
@@ -32,6 +33,13 @@ public class UserVerificationSteps {
         Button buttonComponent = new Button(page);
         Locator button = buttonComponent.getByLabel(expectedLabel, false);
         Assertions.assertTrue(button.isVisible(), "Expected button with label '" + expectedLabel + "' to be visible.");
+    }
+
+    @Then("I should see {string} icon")
+    public void iShouldSeeIcon(String expectedLinkText) {
+        Link linkTextComponent = new Link(page);
+        Locator link = linkTextComponent.getByLink(expectedLinkText, false);
+        Assertions.assertTrue(link.isVisible(), "Expected button with label '" + expectedLinkText + "' to be visible.");
     }
 
     @Then("I should see button contains {string} text")
